@@ -45,3 +45,22 @@ coll := client.Collection("Namespace/Collection")
 If you specify the **DefaultNamespace** in the client configuration, you won't need to specify it every time you create a new instance.
 {% endhint %}
 
+## Create Record
+
+To create a new entry in the Polybase collection, you need to use the `Create()` method of the collection instance. If your request is successfully executed, you can get the final state of the record in the database, to learn more visit the [Response](go.md#response) paragraph.
+
+**An example of creating a new record in the collection:**
+
+```go
+ctx := context.Background()
+// Arguments to the collection constructor function.
+args := []any{1, "string", true}
+
+coll.Create(ctx, args, nil)
+```
+
+{% hint style="info" %}
+For the convenience of passing arguments, we added the **ParseInput** function.
+{% endhint %}
+
+## Response
