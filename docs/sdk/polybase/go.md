@@ -64,3 +64,37 @@ For the convenience of passing arguments, we added the **ParseInput** function.
 {% endhint %}
 
 ## Response
+
+There are two response types in go-polybase, `SingleResponse` and `Response`.
+
+`SingleResponse` type is used for requests that return a single record, such requests include all those that call collection functions (constructor, etc.) or receive the specified record by its id.
+
+**An example of a single response:**
+
+```go
+type Todo struct {
+    ID     int    `json:"id"`
+    Title  string `json:"title"`
+    Status bool   `json:"status"`
+}
+
+var response polybase.SingleResponse[Todo]
+```
+
+`Response` type is used for requests that can return more than one record, it includes all requests that are created through filters (limit, before, etc.) or requests that receive all records of the collection.
+
+**An example of a response with possible multiple records:**
+
+```go
+var response polybase.Response[Todo]
+```
+
+To decode the response returned by the database, you need to pass a pointer to a variable with type response to a method that accepts an argument named `resp`.
+
+**An example of response decoding:**
+
+```go
+var response polybase.Response[Todo]
+
+coll.Get(ctx, &response)
+```
