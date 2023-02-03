@@ -47,7 +47,7 @@ If you specify the **DefaultNamespace** in the client configuration, you won't n
 
 ## Create Record
 
-To create a new entry in the Polybase collection, you need to use the `Create()` method of the collection instance. If your request is successfully executed, you can get the final state of the record in the database, to learn more visit the [Response](go.md#response) paragraph.
+To create a new entry in the Polybase collection, you need to use the `Create()` method of the collection instance. If your request is successfully executed, you can get the final state of the record in the database, to learn more, visit the [Response](go.md#response) section.
 
 **An example of creating a new record in the collection:**
 
@@ -62,6 +62,42 @@ coll.Create(ctx, args, nil)
 {% hint style="info" %}
 For the convenience of passing arguments, we added the **ParseInput** function.
 {% endhint %}
+
+## Get Record
+
+To get the collection records, you need to use the `Get()` method of the collection instance and pass the response structure, to learn more, visit the [Response](go.md#response) section.
+
+**An example of getting collection records:**
+
+```go
+var response polybase.Response[Model]
+
+coll.Get(ctx, &response)
+```
+
+You can also use query filters to retrieve the database records you need.
+
+**Available filters:**
+
+* Before, After, Limit, Sort, Where
+
+**An example of getting records with the specified filters:**
+
+```go
+var response polybase.Response[Model]
+
+coll.Before("cursor").Limit(10).Get(ctx, &response)
+```
+
+Using the `Record()` method of a collection instance, you can get a record from the database by the specified record ID.
+
+**An example of getting a record by id:**
+
+```go
+var response polybase.SingleResponse[Model]
+
+coll.Record("id").Get(ctx, &response)
+```
 
 ## Response
 
