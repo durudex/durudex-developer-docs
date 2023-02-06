@@ -99,6 +99,23 @@ var response polybase.SingleResponse[Model]
 coll.Record("id").Get(ctx, &response)
 ```
 
+## Call Function
+
+To call the collection functions, you need to use the Call() method of the record instance by the specified identifier. You can get the final state of the record in the database, to learn more, visit the [Response](go.md#response) section.
+
+**An example of calling a collection function:**
+
+```go
+// Arguments of the collection function you are going to call.
+args := []any{1, "string", true}
+
+coll.Record("id").Call(ctx, "function-name", args, nil)
+```
+
+{% hint style="info" %}
+For the convenience of passing arguments, we added the **ParseInput** function.
+{% endhint %}
+
 ## Response
 
 There are two response types in go-polybase, `SingleResponse` and `Response`.
