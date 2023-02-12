@@ -9,5 +9,5 @@
 ## SDK
 
 * [Polybase](sdk/polybase/README.md)
-  * [PolyGen](sdk/polybase/polygen.md)
-  * [Go](sdk/polybase/go.md)
+  * [⏱ PolyGen](sdk/polybase/polygen.md)
+  * [🔥 Go](sdk/polybase/go.md)

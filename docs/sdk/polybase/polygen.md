@@ -2,13 +2,13 @@
 description: Welcome to the PolyGen CLI documentation.
 ---
 
-# PolyGen
+# ⏱ PolyGen
 
 ## Setup
 
 To get the [PolyGen](https://github.com/durudex/polygen) CLI, you need to have or install Go version >= [1.18](https://go.dev/dl/). To check your current version of Go, use the `go version` command.
 
-**The command to get the module:**
+**The command to install cli:**
 
 ```bash
 go install github.com/durudex/polygen/cmd/polygen@latest
@@ -34,7 +34,7 @@ language:
 
 To start generating code using the configuration you created, you need to use the CLI with the specified path to the configuration file.
 
-**An example of command to start code generation:**
+**The command to start code generation:**
 
 ```bash
 polygen --config .polygen.yml

@@ -2,7 +2,7 @@
 description: Welcome to the Go Polybase client documentation.
 ---
 
-# Go
+# 🔥 Go
 
 ## Setup
 
@@ -101,7 +101,7 @@ coll.Record("id").Get(ctx, &response)
 
 ## Call Function
 
-To call the collection functions, you need to use the Call() method of the record instance by the specified identifier. You can get the final state of the record in the database, to learn more, visit the [Response](go.md#response) section.
+To call the collection functions, you need to use the `Call()` method of the record instance by the specified identifier. You can get the final state of the record in the database, to learn more, visit the [Response](go.md#response) section.
 
 **An example of calling a collection function:**
 
